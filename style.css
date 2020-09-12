@@ -1,4 +1,11 @@
 body {
     background-color:lightblue ;
     color: lightslategray;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+header {
+    border-bottom: 2px solid lightslategray;
+
 }
