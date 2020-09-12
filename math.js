@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let inputNumber = prompt("Enter a decimal value");
 
 let div1 = Math.floor(inputNumber / 2);
@@ -41,7 +40,5 @@ console.log(`The binary of ${inputNumber} is ${binary8}${binary7}${binary6}${bin
 //if(remainder1 == 15){
 //    remainder1 = "F";
 //}
-=======
 var decval = prompt(`What is the decimal value?`);
 
->>>>>>> main
