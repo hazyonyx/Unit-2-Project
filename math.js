@@ -1,44 +1,29 @@
-let inputNumber = prompt("Enter a decimal value");
+let decVal = Number(prompt("Enter a decimal value"));
 
-let div1 = Math.floor(inputNumber / 2);
-let div2 = Math.floor(div1 / 2);
-let div3 = Math.floor(div2 / 2);
-let div4 = Math.floor(div3 / 2);
-let div5 = Math.floor(div4 / 2);
-let div6 = Math.floor(div5 / 2);
-let div7 = Math.floor(div6 / 2);
+let biVal1 = decVal.toString(2);
+let hexVal1 = decVal.toString(16);
 
+let biLength = biVal1.length;
+let hexLength = hexVal1.length;
 
-let binary1 = (inputNumber % 2);
-let binary2 = (div1 % 2);
-let binary3 = (div2 % 2);
-let binary4 = (div3 % 2);
-let binary5 = (div4 % 2);
-let binary6 = (div5 % 2);
-let binary7 = (div6 % 2);
-let binary8 = (div7 % 2);
+//find compliment to 2 or 4 for front "0" padding
+let biPadLen = 4 - ((biLength - 1) % 4 + 1);
+let hexPadLen = 2 - ((hexLength - 1) % 2 + 1);
 
-console.log(`The binary of ${inputNumber} is ${binary8}${binary7}${binary6}${binary5} ${binary4}${binary3}${binary2}${binary1}`);
+//adding "0" padding
+let biPad = "000";
+biPad = biPad.substring(0,biPadLen);
+let biVal2 = biPad + biVal1;
+let biOut = biVal2.match(/.{1,4}/g).join(' ');
 
+//formatting output
+let hexPad = "0";
+hexPad = hexPad.substring(0,hexPadLen);
+hexVal2 = hexPad + hexVal1;
+let hexOut = hexVal2.match(/.{1,2}/g).join(' ');
 
+//console.log(`${biVal1} ${biLength} ${biPadLen} ${biPad} ${biVal2} ${biOut}`);
+//console.log(`${hexVal1} ${hexLength} ${hexPadLen} ${hexPad} ${hexVal2} ${hexOut}`);
 
-//if(remainder1 == 10){
-//    remainder1 = "A";
-//}
-//if(remainder1 == 11){
-//    remainder1 = "B";
-//}
-//if(remainder1 == 12){
-//    remainder1 = "C";
-//}
-//if(remainder1 == 13){
-//    remainder1 = "D";
-//}
-//if(remainder1 == 14){
-//    remainder1 = "E";
-//}
-//if(remainder1 == 15){
-//    remainder1 = "F";
-//}
-var decval = prompt(`What is the decimal value?`);
-
+console.log(`The binary of ${decVal} is: ${biOut}`);
+console.log(`The hexadecimal of ${decVal} is: ${hexOut}`);
